@@ -23,14 +23,8 @@ export default function CarListPage() {
   }, [])
 
   async function handleDelete(id) {
-    if (!window.confirm('Deseja realmente deletar este carro?')) return
-
-    try {
       await fetch(`http://localhost:8080/carro/${id}`, { method: 'DELETE' })
       fetchCars()
-    } catch {
-      alert('Erro ao deletar')
-    }
   }
 
   return (
@@ -55,10 +49,10 @@ export default function CarListPage() {
             <div key={carro.id} className="list-item">
               <strong>{carro.modelo}</strong> - {carro.marca} ({carro.ano})
               <div>
-                <button onClick={() => setEditCarro(carro)} style={{ marginRight: '0.75rem' }}>
+                <button id='editar' onClick={() => setEditCarro(carro)} style={{ marginRight: '0.75rem' }}>
                   Editar
                 </button>
-                <button onClick={() => handleDelete(carro.id)} className="delete-button">
+                <button id='deletar' onClick={() => handleDelete(carro.id)} className="delete-button">
                   Deletar
                 </button>
               </div>

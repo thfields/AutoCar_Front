@@ -53,6 +53,7 @@ export default function CarForm({ onSuccess, edit }) {
     <form onSubmit={handleSubmit} className="form">
       <h2>{id !== null ? 'Editar Carro' : 'Novo Carro'}</h2>
       <input
+        id='modelo'
         className="input"
         placeholder="Modelo"
         value={modelo}
@@ -60,6 +61,7 @@ export default function CarForm({ onSuccess, edit }) {
         required
       />
       <input
+        id='marca'
         className="input"
         placeholder="Marca"
         value={marca}
@@ -67,6 +69,7 @@ export default function CarForm({ onSuccess, edit }) {
         required
       />
       <input
+        id='ano'
         className="input"
         placeholder="Ano"
         type="number"
@@ -76,7 +79,7 @@ export default function CarForm({ onSuccess, edit }) {
         min="1900"
         max="2099"
       />
-      <button type="submit">{id !== null ? 'Atualizar' : 'Salvar'}</button>
+      <button id='salvar' type="submit">{id !== null ? 'Atualizar' : 'Salvar'}</button>
     </form>
   )
 }

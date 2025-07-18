@@ -35,6 +35,7 @@ export default function LoginPage({ onLogin }) {
         noValidate
       >
         <input
+          id="login"
           className="input"
           placeholder="Usuário"
           value={username}
@@ -42,6 +43,7 @@ export default function LoginPage({ onLogin }) {
           required
         />
         <input
+          id="senha"
           className="input"
           placeholder="Senha"
           type="password"
@@ -49,7 +51,7 @@ export default function LoginPage({ onLogin }) {
           onChange={e => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Entrar</button>
+        <button id='entrar' type="submit">Entrar</button>
       </form>
       {error && <p className="error-message">{error}</p>}
     </div>
